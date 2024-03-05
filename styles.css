@@ -1,0 +1,328 @@
+body {
+    background-color: rgb(249, 212, 0);
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 200px;
+}
+
+.navHeader {
+  font-family: "Belanosima", sans-serif;
+  font-size: 130px;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  border-bottom: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(249, 212, 0);
+  padding-top: 50px;
+  padding-right: 50px;
+  text-align: right;
+  background-color: rgb(249, 212, 0);
+}
+
+.navHeader:hover {
+  color: rgb(38, 0, 152);
+  cursor: pointer;
+}
+
+.mainContainer {
+padding: 0;
+margin: 0;
+width: 100%;
+}
+
+
+.lessonHeader {
+  font-family: 'Lucida Sans Regular', sans-serif;
+  font-weight: lighter;
+  font-size: 50px;
+  padding: 10px;
+  margin-inline: 20px;
+  margin-bottom: 30px;
+}
+
+.optionButton:hover {
+    background-Color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+
+
+#nextButton:hover, .nextModuleButton:hover {
+    background-Color: rgb(116, 255, 239);
+    cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.moduleCard:hover {
+  background-color: rgb(249, 212, 0);
+  color: white;
+
+}
+
+.homeTagline {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 120px;
+  margin-inline: 7%;
+}
+
+
+iframe {
+  display: block;
+}
+
+iframe, .iFrame, .iFrameContainer {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#quizContainer {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgb(0, 174, 159);
+  padding: 20px;
+  padding-bottom: 1000px;
+  color: white;
+}
+
+#questionNoLine {
+  font-family: 'Lucida Sans Regular', sans-serif;
+  margin-bottom: 30px;
+}
+
+#question {
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+#correctMessage {
+  margin-bottom: 30px;
+}
+
+#nextButton {
+  color: black;
+}
+
+.moduleCard {
+  height: 150px;
+  background-color: white;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  margin-inline: auto;
+  box-shadow: -3px 3px 1px rgb(210, 210, 210);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  font-size: 50px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+
+.moduleDescription {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.moduleHeader {
+  font-family: "Belanosima", sans-serif;
+  font-size: 80px;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  padding: 10px;
+  margin-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lessonProgressLine {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
+
+.quizLabel {
+  font-size: 80px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#options {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: black;
+}
+
+.optionButton {
+  background-Color: rgb(241, 241, 241);
+  font-size: 30px;
+  margin-Top: 40px;
+  padding: 50px;
+  border-Radius: 5px;
+}
+
+.optionButtonSelected {
+  background-Color: rgb(196, 196, 196);
+  font-size: 30px;
+  margin-Top: 40px;
+  padding: 50px;
+  border-Radius: 5px;
+}
+
+.optionButtonSelected:hover {
+  cursor: pointer;
+}
+
+
+#nextButton, .nextModuleButton {
+  background-Color: rgb(0, 255, 225);
+  font-size: 30px;
+  margin-Top: 80px;
+  padding: 60px;
+  border-Radius: 5px;
+  color: black;
+}
+
+
+@media screen and (min-width: 992px) {
+
+  body {
+    background-color: white;
+    padding-bottom: 200px;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 20%;
+  }
+
+  .mainContainer {
+    min-height: 600px;
+    align-self: center;
+  }
+
+  .navHeader {
+    font-size: 50px;
+    margin-bottom: 40px;
+    text-align: left;
+    padding-top: 20px;
+    padding-inline: 0px;
+    padding-bottom: 10px;
+    background-color: white;
+  }
+
+  .homeTagline {
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-inline: 0px;
+  }
+
+  .moduleCard {
+    display: inline-flex;
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(247, 247, 247);
+  }
+
+  .moduleDescription {
+    font-size: 13px;
+    width: 40%;
+    margin-left: 10px;
+    text-align: right;
+    margin-top: 0px;
+  }
+
+  .moduleHeader {
+    font-size: 30px;
+    margin-inline: 0px;
+  }
+
+  .lessonHeader {
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-inline: 0px;
+  }
+
+  .lessonProgressLine {
+    font-size: 15px;
+  }
+
+  .iFrameContainer {
+    margin-bottom: 40px;
+    width: 50%;
+  }
+
+  iframe {
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+  }
+
+  .quizLabel {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  #options {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    color: black;
+  }
+
+  .optionButton {
+    background-Color: rgb(241, 241, 241);
+    font-size: 18px;
+    height: 20px;
+    width: fit-content;
+    margin-Top: 10px;
+    padding: 10px;
+    border-Radius: 5px;
+}
+
+.optionButtonSelected {
+  background-Color: rgb(196, 196, 196);
+  font-size: 18px;
+  height: 20px;
+  width: fit-content;
+  margin-Top: 10px;
+  padding: 10px;
+  border-Radius: 5px;
+}
+
+#nextButton, .nextModuleButton {
+  height: 20px;
+  font-size: 18px;
+  width: fit-content;
+  margin-Top: 10px;
+  padding: 10px;
+}
+
+#quizContainer {
+  padding-bottom: 20px;
+  margin-top: 50px;
+}
+
+#question {
+  margin-top: 0px;
+}
+
+}
+
+
+
+
+
+
+
+

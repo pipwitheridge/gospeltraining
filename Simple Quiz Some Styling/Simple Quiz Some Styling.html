@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Simple Quiz | No Styling</title>
+
+<link rel="stylesheet" href="./styles.css">
+
+<script>
+
+const quizData = [
+    {
+        "questionNo": 1,
+        "question": "What questions does the book of Genesis seek to answer?",
+        "options": ["Historical", "Scientific", "Theological"],
+        "answer": ["Theological"],
+        "correctMessage": "That's right—Genesis is primarily about theological questions.",
+    },
+    {
+        "questionNo": 2,
+        "question": "What words accurately describe the way in which God creates?",
+        "options": ["Lovingly", "Recklessly", "Powerfully", "Randomly"],
+        "answer": ["Lovingly", "Powerfully"],
+        "correctMessage": "Yes. That's correct.",
+    },
+    {
+        "questionNo": 3,
+        "question": "What phrase conveys the special place of humanity in the universe?",
+        "options": ["Made in God's image", "Created first", "Made stronger than anything else"],
+        "answer": ["Made in God's image"],
+        "correctMessage": "Yes—the Bible portrays humans as special as they are made in God's own image.",
+    },
+] 
+
+var currentQuestion = 0
+var checkedOptions = []
+
+const handleProgressClick = () => {
+    const allCorrect = checkedOptions.every((thing) => quizData[currentQuestion].answer.includes(thing));
+    const checkingAnswer = document.getElementById("nextButton").innerHTML === "Check Answer"
+    const tryingAgain = document.getElementById("nextButton").innerHTML === "Try Again" 
+    const nextQuestion = document.getElementById("nextButton").innerHTML === "Next Question" 
+    const finishingQuiz = document.getElementById("nextButton").innerHTML === "Finish Quiz" 
+    const correctAnswerLength = checkedOptions.length === quizData[currentQuestion].answer.length;
+    const finalQuestion = currentQuestion === quizData.length-1;
+    if(!allCorrect && checkingAnswer) {
+        document.getElementById("nextButton").innerHTML = "Try Again";
+        checkedOptions.forEach((thing) => {
+            if(quizData[currentQuestion].answer.includes(thing)) {
+                document.getElementById(thing).style.backgroundColor = "gold";
+            }
+            else {
+                document.getElementById(thing).style.backgroundColor = "red";
+            }
+        })
+    }
+    if(tryingAgain) {
+        document.getElementById("nextButton").innerHTML = "Check Answer";
+        checkedOptions.forEach((thing) => {
+            document.getElementById(thing).style.backgroundColor = "lightgrey";
+        });
+        refreshQuestions();
+    }
+    if(correctAnswerLength && allCorrect && checkingAnswer) {
+        document.getElementById("correctMessage").style.display = "";
+        checkedOptions.forEach((thing) => {
+            document.getElementById(thing).style.backgroundColor = "green";
+        })
+        if(finalQuestion) {
+            document.getElementById("nextButton").innerHTML = "Finish Quiz";
+        }
+        else {
+            document.getElementById("nextButton").innerHTML = "Next Question";
+        }
+    }
+    if(nextQuestion) {
+        currentQuestion++;
+        document.getElementById("correctMessage").style.display = "none";
+        refreshQuestions()
+        document.getElementById("nextButton").innerHTML = "Check Answer";
+    }
+    if(finishingQuiz) {
+        checkedOptions = [];
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("quizCompleteMsgContainer").style.display = "";
+    }
+}
+
+const refreshQuestions = function() {
+    checkedOptions = [];
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("questionNo").innerHTML = quizData[currentQuestion].questionNo;
+    document.getElementById("question").innerHTML = quizData[currentQuestion].question;
+    document.getElementById("correctMessage").innerHTML = quizData[currentQuestion].correctMessage;
+    quizData[currentQuestion].options.forEach((thing) => {
+        var newOption = document.createElement('div');
+        newOption.innerHTML = thing;
+        newOption.setAttribute("id", thing);
+        newOption.setAttribute("class", "optionButton");
+        newOption.onclick = () => {
+            if(checkedOptions.includes(thing)) {
+                checkedOptions = checkedOptions.filter(item => item !== thing);
+                newOption.removeAttribute("class", "optionButtonSelected");
+                newOption.setAttribute("class", "optionButton");
+            }
+            else {
+                checkedOptions.push(thing);
+                newOption.removeAttribute("class", "optionButton");
+                newOption.setAttribute("class", "optionButtonSelected");
+            }
+        }
+        document.getElementById("options").appendChild(newOption)
+    })
+}            
+
+window.onload = function() {
+    refreshQuestions()
+    document.getElementById("totalQuestions").innerHTML = quizData.length;
+    document.getElementById("nextButton").innerHTML = "Check Answer";
+    document.getElementById("correctMessage").style.display = "none";
+    document.getElementById("quizCompleteMsgContainer").style.display = "none";
+    }            
+
+</script>
+
+</head>
+
+<body>
+    <div id="quizContainer">
+        <div>Quiz</div>
+        <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+        <div id="question"></div>
+        <div style="flex-direction: column;">
+        <div id="options"></div>
+        </div>
+        <div id="correctMessage"></div>
+        <div id="nextButton" onclick="handleProgressClick()"></div>
+    </div>
+    <div id="quizCompleteMsgContainer">Congratulations. You finished the quiz!</div>
+</body>
+
+</html>

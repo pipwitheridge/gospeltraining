@@ -1,0 +1,45 @@
+.optionButton {
+    background-Color: lightgrey;
+    height: 20px;
+    width: fit-content;
+    margin-Top: 10px;
+    padding: 10px;
+    border-Radius: 5px;
+}
+
+.optionButton:hover {
+    background-Color: grey;
+    cursor: pointer;
+}
+
+.optionButtonSelected {
+    background-Color: rgb(98, 98, 98);
+    height: 20px;
+    width: fit-content;
+    margin-Top: 10px;
+    padding: 10px;
+    border-Radius: 5px;
+}
+
+.optionButtonSelected:hover {
+    cursor: pointer;
+}
+
+#nextButton {
+    background-Color: lightskyblue;
+    height: 20px;
+    width: fit-content;
+    margin-Top: 10px;
+    padding: 10px;
+    border-Radius: 5px;
+}
+
+#nextButton:hover {
+    background-Color: deepskyblue;
+    cursor: pointer;
+}
+
+#correctMessage {
+    margin-top: 10px;
+}
+

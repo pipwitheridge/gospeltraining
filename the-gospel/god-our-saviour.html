@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Evangelism Training</title>
+    <link rel="stylesheet" href="./../styles.css">
+    <link rel="favicon" href="favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
+
+
+<script>
+
+const quizData = [
+    {
+        "questionNo": 1,
+        "question": "What is involved in God saving us?",
+        "options": ["Love", "Sacrifice", "Forgiveness", "Apathy"],
+        "answer": ["Love", "Sacrifice", "Forgiveness"],
+        "correctMessage": "Yes, Jesus' sacrifice is a demonstration of God's love which enables forgiveness.",
+    },
+    {
+        "questionNo": 2,
+        "question": "According to the Bible, what's the right response to God's mercy?",
+        "options": ["Faith/Trust", "Self-loathing", "Repentance", "Pay God back"],
+        "answer": ["Faith/Trust", "Repentance"],
+        "correctMessage": "Yes. We cannot pay God back, and we need not loathe ourselves. Rather we can rejoice in the new life God gives.",
+    },
+    {
+        "questionNo": 3,
+        "question": "Who is involved in salvation?",
+        "options": ["God the Father", "Jesus (God the Son)", "God the Holy Spirit"],
+        "answer": ["God the Father", "Jesus (God the Son)", "God the Holy Spirit"],
+        "correctMessage": "Yes—the Father, Son, and Spirit are all involved in salvation.",
+    },
+] 
+
+var currentQuestion = 0
+var checkedOptions = []
+
+const handleProgressClick = () => {
+    const allCorrect = checkedOptions.every((thing) => quizData[currentQuestion].answer.includes(thing));
+    const checkingAnswer = document.getElementById("nextButton").innerHTML === "Check Answer"
+    const tryingAgain = document.getElementById("nextButton").innerHTML === "Try Again" 
+    const nextQuestion = document.getElementById("nextButton").innerHTML === "Next Question" 
+    const finishingQuiz = document.getElementById("nextButton").innerHTML === "Finish Quiz" 
+    const correctAnswerLength = checkedOptions.length === quizData[currentQuestion].answer.length;
+    const finalQuestion = currentQuestion === quizData.length-1;
+    if(!allCorrect && checkingAnswer) {
+        document.getElementById("nextButton").innerHTML = "Try Again";
+        checkedOptions.forEach((thing) => {
+            if(quizData[currentQuestion].answer.includes(thing)) {
+                document.getElementById(thing).style.backgroundColor = "gold";
+            }
+            else {
+                document.getElementById(thing).style.backgroundColor = "rgb(255, 102, 102)";
+            }
+        })
+    }
+    if(tryingAgain) {
+        document.getElementById("nextButton").innerHTML = "Check Answer";
+        checkedOptions.forEach((thing) => {
+            document.getElementById(thing).style.backgroundColor = "rgb(241, 241, 241)";
+        });
+        refreshQuestions();
+    }
+    if(correctAnswerLength && allCorrect && checkingAnswer) {
+        document.getElementById("correctMessage").style.display = "";
+        checkedOptions.forEach((thing) => {
+            document.getElementById(thing).style.backgroundColor = "rgb(0, 255, 153)";
+        })
+        if(finalQuestion) {
+            document.getElementById("nextButton").innerHTML = "Finish Quiz";
+        }
+        else {
+            document.getElementById("nextButton").innerHTML = "Next Question";
+        }
+    }
+    if(nextQuestion) {
+        currentQuestion++;
+        document.getElementById("correctMessage").style.display = "none";
+        refreshQuestions()
+        document.getElementById("nextButton").innerHTML = "Check Answer";
+    }
+    if(finishingQuiz) {
+        checkedOptions = [];
+        document.getElementById("unfinishedQuix").style.display = "none";
+        document.getElementById("quizCompleteMsgContainer").style.display = "";
+    }
+}
+
+const refreshQuestions = function() {
+    checkedOptions = [];
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("questionNo").innerHTML = quizData[currentQuestion].questionNo;
+    document.getElementById("question").innerHTML = quizData[currentQuestion].question;
+    document.getElementById("correctMessage").innerHTML = quizData[currentQuestion].correctMessage;
+    quizData[currentQuestion].options.forEach((thing) => {
+        var newOption = document.createElement('div');
+        newOption.innerHTML = thing;
+        newOption.setAttribute("id", thing);
+        newOption.setAttribute("class", "optionButton");
+        newOption.onclick = () => {
+            if(checkedOptions.includes(thing)) {
+                checkedOptions = checkedOptions.filter(item => item !== thing);
+                newOption.removeAttribute("class", "optionButtonSelected");
+                newOption.setAttribute("class", "optionButton");
+            }
+            else {
+                checkedOptions.push(thing);
+                newOption.removeAttribute("class", "optionButton");
+                newOption.setAttribute("class", "optionButtonSelected");
+            }
+        }
+        document.getElementById("options").appendChild(newOption)
+    })
+}            
+
+window.onload = function() {
+    refreshQuestions()
+    document.getElementById("totalQuestions").innerHTML = quizData.length;
+    document.getElementById("nextButton").innerHTML = "Check Answer";
+    document.getElementById("correctMessage").style.display = "none";
+    document.getElementById("quizCompleteMsgContainer").style.display = "none";
+    }            
+
+</script>
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <a href="/"><div class="navHeader"><i class="fa-regular fa-comments" style="margin-right: 20px;"></i>Evangelism Training</div></a>
+        <div class="moduleHeader">
+        <div>The Gospel</div>
+        <div class="lessonProgressLine">Part 3 of 4</div>
+        </div>
+        <div class="lessonHeader">God our saviour</div>
+        <div class="iFrameContainer">
+            <iframe class="iFrame"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+            </iframe>
+        </div>
+        <div id="quizContainer">
+        <div id="unfinishedQuix">
+            <div class="quizLabel">Quiz</div>
+            <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+            <div id="question"></div>
+            <div style="flex-direction: column;">
+            <div id="options"></div>
+            </div>
+            <div id="correctMessage"></div>
+            <div id="nextButton" onclick="handleProgressClick()"></div>
+        </div>
+            <div id="quizCompleteMsgContainer">
+                <div class="quizLabel">Nice work!</div>
+                <div class="nextModuleButton"><a href="./god-our-friend.html">Next Module</a</div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
