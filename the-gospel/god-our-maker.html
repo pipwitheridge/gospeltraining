@@ -10,34 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
-
+    <script src="./../quizQuestions.js"></script>
 
 <script>
 
-const quizData = [
-    {
-        "questionNo": 1,
-        "question": "What questions does the book of Genesis seek to answer?",
-        "options": ["Historical", "Scientific", "Theological"],
-        "answer": ["Theological"],
-        "correctMessage": "That's right—Genesis is primarily about theological questions.",
-    },
-    {
-        "questionNo": 2,
-        "question": "What words accurately describe the way in which God creates?",
-        "options": ["Lovingly", "Recklessly", "Powerfully", "Randomly"],
-        "answer": ["Lovingly", "Powerfully"],
-        "correctMessage": "Yes. That's correct.",
-    },
-    {
-        "questionNo": 3,
-        "question": "What phrase conveys the special place of humanity in the universe?",
-        "options": ["Made in God's image", "Created first", "Made stronger than anything else"],
-        "answer": ["Made in God's image"],
-        "correctMessage": "Yes—the Bible portrays humans as special as they are made in God's own image.",
-    },
-] 
-
+const quizData = quizQuestions.filter((thing) => thing.moduleName === "God our maker");
 var currentQuestion = 0
 var checkedOptions = []
 
@@ -49,7 +26,7 @@ const handleProgressClick = () => {
     const finishingQuiz = document.getElementById("nextButton").innerHTML === "Finish Quiz" 
     const correctAnswerLength = checkedOptions.length === quizData[currentQuestion].answer.length;
     const finalQuestion = currentQuestion === quizData.length-1;
-    if(!allCorrect && checkingAnswer) {
+    if(!allCorrect && checkingAnswer || !correctAnswerLength) {
         document.getElementById("nextButton").innerHTML = "Try Again";
         checkedOptions.forEach((thing) => {
             if(quizData[currentQuestion].answer.includes(thing)) {
@@ -87,7 +64,7 @@ const handleProgressClick = () => {
     }
     if(finishingQuiz) {
         checkedOptions = [];
-        document.getElementById("unfinishedQuix").style.display = "none";
+        document.getElementById("unfinishedQuiz").style.display = "none";
         document.getElementById("quizCompleteMsgContainer").style.display = "";
     }
 }
@@ -139,12 +116,13 @@ window.onload = function() {
         <div class="lessonProgressLine">Part 1 of 4</div>
         </div>
         <div class="lessonHeader">God our maker</div>
-        <div style="position:relative;padding-top:56.25%;">
-            <iframe frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"
-            src="https://www.youtube.com/embed/pM1Ftz4wXh8?autoplay=1&mute=1">
+        <div class="iFrameContainer">
+            <iframe frameborder="0" allowfullscreen
+            src="https://www.youtube.com/embed/rEYMk0Eb2xs?autoplay=1&mute=1">
             </iframe>
         </div>
         <div id="quizContainer">
+            <div id="unfinishedQuiz">
             <div class="quizLabel">Quiz</div>
             <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
             <div id="question"></div>
@@ -153,6 +131,7 @@ window.onload = function() {
             </div>
             <div id="correctMessage"></div>
             <div id="nextButton" onclick="handleProgressClick()"></div>
+            </div>
             <div id="quizCompleteMsgContainer">
                 <div class="quizLabel">Nice work!</div>
                 <div class="nextModuleButton"><a href="./god-our-enemy.html">Next Module</a</div>

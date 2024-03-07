@@ -10,34 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
-
+    <script src="./../quizQuestions.js"></script>
 
 <script>
-
-const quizData = [
-    {
-        "questionNo": 1,
-        "question": "In the Bible, what does sin lead to?",
-        "options": ["Joy", "Sadness", "Death"],
-        "answer": ["Sadness", "Death"],
-        "correctMessage": "That's right—the Bible makes it clear that sin is awful.",
-    },
-    {
-        "questionNo": 2,
-        "question": "What are the consequences of being God's enemy?",
-        "options": ["Immediate death", "Seperation from God", "Under God's judgement"],
-        "answer": ["Seperation from God", "Under God's judgement"],
-        "correctMessage": "Yes. That's correct.",
-    },
-    {
-        "questionNo": 3,
-        "question": "What was the definition given for sin?",
-        "options": ["Turning away from God", "Breaking rules", "Being silly"],
-        "answer": ["Turning away from God"],
-        "correctMessage": "Yes—sin is a relational betrayal, not simply a failure to keep rules.",
-    },
-] 
-
+    
+    
+const quizData = quizQuestions.filter((thing) => thing.moduleName === "God our enemy");
 var currentQuestion = 0
 var checkedOptions = []
 
@@ -49,7 +27,7 @@ const handleProgressClick = () => {
     const finishingQuiz = document.getElementById("nextButton").innerHTML === "Finish Quiz" 
     const correctAnswerLength = checkedOptions.length === quizData[currentQuestion].answer.length;
     const finalQuestion = currentQuestion === quizData.length-1;
-    if(!allCorrect && checkingAnswer) {
+    if(!allCorrect && checkingAnswer || !correctAnswerLength) {
         document.getElementById("nextButton").innerHTML = "Try Again";
         checkedOptions.forEach((thing) => {
             if(quizData[currentQuestion].answer.includes(thing)) {
@@ -87,7 +65,7 @@ const handleProgressClick = () => {
     }
     if(finishingQuiz) {
         checkedOptions = [];
-        document.getElementById("unfinishedQuix").style.display = "none";
+        document.getElementById("unfinishedQuiz").style.display = "none";
         document.getElementById("quizCompleteMsgContainer").style.display = "";
     }
 }
@@ -140,12 +118,12 @@ window.onload = function() {
         </div>
         <div class="lessonHeader">God our enemy</div>
         <div class="iFrameContainer">
-            <iframe class="iFrame"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+            <iframe frameborder="0" allowfullscreen
+            src="https://www.youtube.com/embed/IXp0Wp-zXNk?autoplay=1&mute=1">
             </iframe>
         </div>
         <div id="quizContainer">
-        <div id="unfinishedQuix">
+            <div id="unfinishedQuiz">
             <div class="quizLabel">Quiz</div>
             <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
             <div id="question"></div>
@@ -154,7 +132,7 @@ window.onload = function() {
             </div>
             <div id="correctMessage"></div>
             <div id="nextButton" onclick="handleProgressClick()"></div>
-        </div>
+            </div>
             <div id="quizCompleteMsgContainer">
                 <div class="quizLabel">Nice work!</div>
                 <div class="nextModuleButton"><a href="./god-our-saviour.html">Next Module</a</div>
