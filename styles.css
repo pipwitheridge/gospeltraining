@@ -112,7 +112,7 @@ iframe, .iFrame, .iFrameContainer {
 
 #question {
   margin-top: 50px;
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 100;
   margin-bottom: 50px;
   text-align: center;
@@ -120,7 +120,7 @@ iframe, .iFrame, .iFrameContainer {
 
 #correctMessage {
   margin-bottom: 30px;
-  font-size: 70px;
+  font-size: 60px;
 }
 
 #nextButton {
@@ -179,7 +179,7 @@ iframe, .iFrame, .iFrameContainer {
 
 .optionButton {
   background-Color: rgb(241, 241, 241);
-  font-size: 70px;
+  font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
@@ -187,7 +187,7 @@ iframe, .iFrame, .iFrameContainer {
 
 .optionButtonSelected {
   background-Color: rgb(196, 196, 196);
-  font-size: 70px;
+  font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
@@ -200,7 +200,7 @@ iframe, .iFrame, .iFrameContainer {
 
 #nextButton, .nextModuleButton {
   background-Color: rgb(0, 255, 225);
-  font-size: 70px;
+  font-size: 60px;
   margin-Top: 80px;
   padding: 60px;
   border-Radius: 5px;
