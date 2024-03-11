@@ -3,14 +3,13 @@
 @media screen and (max-width: 992px) {
 
 @property --mobile-font-normal {
-  font-size: 55px;
+  font-size: 65px;
 }
 
 body {
     background-color: rgb(249, 212, 0);
     padding: 0px;
     margin: 0px;
-    padding-bottom: 200px;
 }
 
 .navHeader {
@@ -87,7 +86,7 @@ a {
 
 iframe {
   display: block;
-  position:absolute;
+  position: absolute;
     top:0;
     left:0;
     width:100%;
@@ -96,7 +95,6 @@ iframe {
 }
 
 iframe, .iFrame, .iFrameContainer {
-  width: 100%;
   display: block;
   margin: 0;
   padding: 0;
@@ -108,7 +106,7 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #quizContainer {
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(50, 50, 50);
   padding: 20px;
   padding-bottom: 1000px;
   color: white;
@@ -351,9 +349,8 @@ iframe, .iFrame, .iFrameContainer {
   }
 
   .quizLabel {
-    font-size: 70px;
+    font-size: 40px;
     padding: 10px;
-    margin-bottom: 30px;
     margin-inline: 0px;
     font-family: 'Lucida Sans Regular', sans-serif;
     font-weight: lighter;
@@ -428,7 +425,7 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #questionNoLine {
-    font-size: 50px;
+    font-size: 30px;
     padding: 10px;
     font-family: 'Lucida Sans Regular', sans-serif;
     font-weight: lighter;
