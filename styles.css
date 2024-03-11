@@ -28,6 +28,13 @@ body {
   cursor: pointer;
 }
 
+.navHeaderSimple {
+  padding: 30px;
+  font-size: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .mainContainer {
 padding: 0;
 margin: 0;
@@ -38,10 +45,10 @@ width: 100%;
 .lessonHeader {
   font-family: 'Lucida Sans Regular', sans-serif;
   font-weight: lighter;
-  font-size: 50px;
+  font-size: 80px;
   padding: 10px;
   margin-inline: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .optionButton:hover {
@@ -150,14 +157,10 @@ iframe, .iFrame, .iFrameContainer {
 
 .moduleHeader {
   font-family: "Belanosima", sans-serif;
-  font-size: 80px;
-  border-bottom: 2px;
-  border-bottom-style: solid;
-  padding: 10px;
-  margin-inline: 20px;
+  font-size: 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  text-align: right;
 }
 
 .lessonProgressLine {
@@ -309,7 +312,7 @@ iframe, .iFrame, .iFrameContainer {
   }
 
   .lessonHeader {
-    font-size: 50px;
+    font-size: 70px;
     padding: 10px;
     margin-bottom: 30px;
     margin-inline: 0px;
