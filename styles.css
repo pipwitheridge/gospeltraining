@@ -3,13 +3,25 @@
 @media screen and (max-width: 992px) {
 
 @property --mobile-font-normal {
-  font-size: 65px;
+  font-size: 75px;
+}
+
+html
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 body {
     background-color: rgb(249, 212, 0);
-    padding: 0px;
+    width: 100%;
+    height: 100%;
     margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 .navHeader {
@@ -39,8 +51,6 @@ body {
 }
 
 .mainContainer {
-padding: 0;
-margin: 0;
 width: 100%;
 }
 
@@ -130,6 +140,7 @@ iframe, .iFrame, .iFrameContainer {
   font-weight: 100;
   margin-bottom: 50px;
   text-align: center;
+  padding-inline: 20px;
 }
 
 #correctMessage {
