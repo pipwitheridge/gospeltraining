@@ -3,7 +3,7 @@
 @media screen and (max-width: 992px) {
 
 @property --mobile-font-normal {
-  font-size: 50px;
+  font-size: 55px;
 }
 
 body {
