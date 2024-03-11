@@ -2,6 +2,10 @@
 
 @media screen and (max-width: 992px) {
 
+@property --mobile-font-normal {
+  font-size: 50px;
+}
+
 body {
     background-color: rgb(249, 212, 0);
     padding: 0px;
@@ -41,14 +45,14 @@ margin: 0;
 width: 100%;
 }
 
-
 .lessonHeader {
   font-family: 'Lucida Sans Regular', sans-serif;
   font-weight: lighter;
   font-size: 80px;
   padding: 10px;
-  margin-inline: 20px;
-  margin-bottom: 10px;
+  padding-inline: 20px;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 .optionButton:hover {
@@ -104,22 +108,27 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #quizContainer {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: rgb(0, 174, 159);
+  background-color: rgb(163, 163, 163);
   padding: 20px;
   padding-bottom: 1000px;
   color: white;
 }
 
+.quizTopLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #questionNoLine {
-  font-family: 'Lucida Sans Regular', sans-serif;
-  margin-bottom: 30px;
-  font-size: 50px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
 }
 
 #question {
   margin-top: 50px;
-  font-size: 60px;
+  font-size: --mobile-font-normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 100;
   margin-bottom: 50px;
   text-align: center;
@@ -127,11 +136,13 @@ iframe, .iFrame, .iFrameContainer {
 
 #correctMessage {
   margin-bottom: 30px;
-  font-size: 60px;
+  font-size: --mobile-font-normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #nextButton {
   color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .moduleCard {
@@ -170,30 +181,34 @@ iframe, .iFrame, .iFrameContainer {
 
 
 .quizLabel {
-  font-size: 100px;
-  font-weight: 600;
+  font-family: 'Lucida Sans Regular', sans-serif;
+  font-weight: lighter;
+  font-size: 80px;
   margin-bottom: 10px;
 }
 
 #options {
   margin-bottom: 50px;
   color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .optionButton {
   background-Color: rgb(241, 241, 241);
-  font-size: 60px;
+  font-size: --mobile-font-normal;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .optionButtonSelected {
   background-Color: rgb(196, 196, 196);
-  font-size: 60px;
+  font-size: --mobile-font-normal;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .optionButtonSelected:hover {
@@ -203,11 +218,12 @@ iframe, .iFrame, .iFrameContainer {
 
 #nextButton, .nextModuleButton {
   background-Color: rgb(0, 255, 225);
-  font-size: 60px;
+  font-size: --mobile-font-normal;
   margin-Top: 80px;
   padding: 60px;
   border-Radius: 5px;
   color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 }
@@ -335,9 +351,12 @@ iframe, .iFrame, .iFrameContainer {
   }
 
   .quizLabel {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 70px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-inline: 0px;
+    font-family: 'Lucida Sans Regular', sans-serif;
+    font-weight: lighter;
   }
 
   #options {
@@ -409,8 +428,10 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #questionNoLine {
-  font-family: 'Lucida Sans Regular', sans-serif;
-  margin-bottom: 30px;
+    font-size: 50px;
+    padding: 10px;
+    font-family: 'Lucida Sans Regular', sans-serif;
+    font-weight: lighter;
 }
 
 #correctMessage {

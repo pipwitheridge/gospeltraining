@@ -111,7 +111,7 @@ window.onload = function() {
 <body>
     <div class="mainContainer">
         <div class="navHeaderSimple">
-            <a href="/"><i class="fa-solid fa-house"></i></a>
+            <a href="/index.html"><i class="fa-solid fa-house"></i></a>
             <div class="moduleHeader">
                 <div>
                     <div>The Gospel</div>
@@ -127,8 +127,10 @@ window.onload = function() {
         </div>
         <div id="quizContainer">
             <div id="unfinishedQuiz">
-            <div class="quizLabel">Quiz</div>
-            <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+            <div class="quizTopLine">
+                <div class="quizLabel">Quiz</div>
+                <div id="questionNoLine"><span id="questionNo"></span> / <span id="totalQuestions"></span></div>
+            </div>
             <div id="question"></div>
             <div style="flex-direction: column;">
             <div id="options"></div>
