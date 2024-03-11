@@ -2,10 +2,6 @@
 
 @media screen and (max-width: 992px) {
 
-@property --mobile-font-normal {
-  font-size: 75px;
-}
-
 html
 {
     width: 100%;
@@ -130,12 +126,12 @@ iframe, .iFrame, .iFrameContainer {
 
 #questionNoLine {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 #question {
   margin-top: 50px;
-  font-size: --mobile-font-normal;
+  font-size: 60px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 100;
   margin-bottom: 50px;
@@ -145,7 +141,7 @@ iframe, .iFrame, .iFrameContainer {
 
 #correctMessage {
   margin-bottom: 30px;
-  font-size: --mobile-font-normal;
+  font-size: 60px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -204,7 +200,7 @@ iframe, .iFrame, .iFrameContainer {
 
 .optionButton {
   background-Color: rgb(241, 241, 241);
-  font-size: --mobile-font-normal;
+  font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
@@ -213,7 +209,7 @@ iframe, .iFrame, .iFrameContainer {
 
 .optionButtonSelected {
   background-Color: rgb(196, 196, 196);
-  font-size: --mobile-font-normal;
+  font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
   border-Radius: 5px;
@@ -227,7 +223,7 @@ iframe, .iFrame, .iFrameContainer {
 
 #nextButton, .nextModuleButton {
   background-Color: rgb(0, 255, 225);
-  font-size: --mobile-font-normal;
+  font-size: 60px;
   margin-Top: 80px;
   padding: 60px;
   border-Radius: 5px;
