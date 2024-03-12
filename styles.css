@@ -112,21 +112,25 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #quizContainer {
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(249, 212, 0);
   padding: 20px;
   padding-bottom: 1000px;
-  color: white;
+  color: black;
 }
 
 .quizTopLine {
+  text-align: right;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
+  padding: 10px;
+  font-size: 60px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #questionNoLine {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 #question {
@@ -186,9 +190,8 @@ iframe, .iFrame, .iFrameContainer {
 
 
 .quizLabel {
-  font-family: 'Lucida Sans Regular', sans-serif;
-  font-weight: lighter;
-  font-size: 80px;
+  font-family: "Belanosima", sans-serif;
+  font-size: 50px;
   margin-bottom: 10px;
 }
 
