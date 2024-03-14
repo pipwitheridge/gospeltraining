@@ -30,7 +30,7 @@ const handleProgressClick = () => {
         document.getElementById("nextButton").innerHTML = "Try Again";
         checkedOptions.forEach((thing) => {
             if(quizData[currentQuestion].answer.includes(thing)) {
-                document.getElementById(thing).style.backgroundColor = "gold";
+                document.getElementById(thing).style.backgroundColor = "rgb(255, 236, 179)";
             }
             else {
                 document.getElementById(thing).style.backgroundColor = "rgb(255, 102, 102)";
@@ -111,7 +111,7 @@ window.onload = function() {
 <body>
     <div class="mainContainer">
         <div class="navHeaderSimple">
-            <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="./../index.html"><i class="fa-solid fa-house"></i></a>
             <div class="moduleHeader">
                 <div>
                     <div>The Gospel</div>

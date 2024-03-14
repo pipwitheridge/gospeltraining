@@ -34,11 +34,6 @@ body {
   background-color: rgb(249, 212, 0);
 }
 
-.navHeader:hover {
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-}
-
 .navHeaderSimple {
   padding: 30px;
   font-size: 60px;
@@ -62,12 +57,6 @@ width: 100%;
 
 .optionButton:hover {
     background-Color: rgb(227, 227, 227);
-    cursor: pointer;
-}
-
-
-#nextButton:hover, .nextModuleButton:hover {
-    background-Color: rgb(116, 255, 239);
     cursor: pointer;
 }
 
@@ -149,11 +138,6 @@ iframe, .iFrame, .iFrameContainer {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#nextButton {
-  color: black;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 .moduleCard {
   height: 230px;
   background-color: white;
@@ -206,7 +190,7 @@ iframe, .iFrame, .iFrameContainer {
   font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
-  border-Radius: 5px;
+  border-Radius: 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -215,7 +199,7 @@ iframe, .iFrame, .iFrameContainer {
   font-size: 60px;
   margin-Top: 40px;
   padding: 50px;
-  border-Radius: 5px;
+  border-Radius: 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -225,26 +209,28 @@ iframe, .iFrame, .iFrameContainer {
 
 
 #nextButton, .nextModuleButton {
-  background-Color: rgb(0, 255, 225);
+  background-Color: rgb(63, 114, 255);
+  color: white;
   font-size: 60px;
   margin-Top: 80px;
   padding: 60px;
-  border-Radius: 5px;
-  color: black;
+  border-Radius: 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.personalResponseInputForm, .personalResponseInputDiv {
+#nextButton:hover, .nextModuleButton:hover {
+  cursor: pointer;
+}
+
+.personalResponseInputForm {
   width: 100%;
   font-size: 60px;
   margin-Top: 80px;
   border-Radius: 5px;
+  height: 8em;
+  box-sizing: border-box;
   color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.personalResponseInputForm {
-  height: 5em;
 }
 
 .paragraphContainer {
@@ -265,7 +251,7 @@ iframe, .iFrame, .iFrameContainer {
 }
 
 #copyTextButton {
-  background-color: rgb(0, 84, 112);
+  background-color: rgb(63, 114, 255);
   color: white;
   border-radius: 10px;
   padding: 20px;
