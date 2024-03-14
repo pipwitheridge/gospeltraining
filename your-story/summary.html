@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Evangelism Training</title>
+    <link rel="stylesheet" href="./../styles.css">
+    <link rel="favicon" href="favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
+    <script src="./../quizQuestions.js"></script>
+
+<script>
+
+const quizData = quizQuestions.filter((thing) => thing.moduleName === "Your story end");
+var currentQuestion = 0;
+
+const handlePersonalResponseSubmit = function() {
+    localStorage.setItem(quizData[currentQuestion].localStorageName, document.getElementById("personalResponseInputForm").value);
+    document.getElementById("unfinishedQuiz").style.display = "none";
+    document.getElementById("quizCompleteMsgContainer").style.display = "";
+}
+    
+const handleCopyTextClick = function() {
+  const responseText = document.getElementById("personalResponseSummaryBox").innerText;
+  navigator.clipboard.writeText(responseText)
+  alert("Text copied to clipboard!");
+}
+
+window.onload = function() {
+        document.getElementById("yourStoryBeginning").innerHTML = localStorage.getItem("yourStoryBeginning")
+        document.getElementById("yourStoryMiddle").innerHTML = localStorage.getItem("yourStoryMiddle")
+        document.getElementById("yourStoryEnd").innerHTML = localStorage.getItem("yourStoryEnd")
+}            
+
+</script>
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navHeaderSimple">
+            <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+            <div class="moduleHeader">
+                <div>
+                    <div>Your Story</div>
+                    <div class="lessonProgressLine">Summary</div>
+                </div>
+            </div>
+        </div>
+        <div class="paragraphContainer">
+        <div class="simpleBodyText">
+        <div>Below is a summary of your story, sometimes called your <em>testimony</em>.</div>
+        <br>
+        <div>You can copy it into your notes app or somewhere else that you can refer back to.</div>
+        <br>
+        <div>It's good to think about how you might tell your story in conversation. Hopefully this is a good starting point.</div>
+        </div>
+        <div class="paddedTextBox">
+        <div class="copyButtonDiv">
+        <div id="copyTextButton" onclick="handleCopyTextClick()">Copy <i class="fa-solid fa-copy"></i></div>
+        </div>
+        <div id="personalResponseSummaryBox">
+            <div class="boldHeaderMediumSize">Before I became a Christian...</div>
+            <div id="yourStoryBeginning"></div>
+            <br>
+            <div class="boldHeaderMediumSize">When I became a Christian...</div>
+            <div id="yourStoryMiddle"></div>
+            <br>
+            <div class="boldHeaderMediumSize">Since I've become a Christian...</div>
+            <div id="yourStoryEnd"></div>
+        </div>
+        </div>
+        <div id="quizCompleteMsgContainer">
+            <div class="quizLabel">Nice work writing your story!</div>
+            <a href="../index.html"><div class="nextModuleButton">Finish Module</div></a>
+        </div>
+    </div>
+    </div>
+    </body>
+
+</html>

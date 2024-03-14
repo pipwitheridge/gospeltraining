@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Evangelism Training</title>
+    <link rel="stylesheet" href="./../styles.css">
+    <link rel="favicon" href="favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
+    <script src="./../quizQuestions.js"></script>
+
+<script>
+
+const quizData = quizQuestions.filter((thing) => thing.moduleName === "Your story beginning");
+var currentQuestion = 0;
+
+const handlePersonalResponseSubmit = function() {
+    localStorage.setItem(quizData[currentQuestion].localStorageName, document.getElementById("personalResponseInputForm").value);
+    document.getElementById("unfinishedQuiz").style.display = "none";
+    document.getElementById("quizCompleteMsgContainer").style.display = "";
+}
+    
+
+window.onload = function() {
+        document.getElementById("quizCompleteMsgContainer").style.display = "none";
+        document.getElementById("question").innerHTML = quizData[currentQuestion].question;
+}            
+
+</script>
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navHeaderSimple">
+            <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+            <div class="moduleHeader">
+                <div>
+                    <div>Your Story</div>
+                    <div class="lessonProgressLine">Part 1 of 3</div>
+                </div>
+            </div>
+        </div>
+        <div class="lessonHeader">Beginning</div>
+        <div class="iFrameContainer">
+            <iframe frameborder="0" allowfullscreen
+            src="https://www.youtube.com/embed/rEYMk0Eb2xs?autoplay=0&controls=0">
+            </iframe>
+        </div>
+        <div id="quizContainer">
+            <div id="unfinishedQuiz">
+            <div class="quizTopLine">
+            <div>
+                <div class="quizLabel">Personal Response</div>
+            </div>
+            </div>
+            <div id="question"></div>
+            <div class="personalResponseInputDiv">
+                <textarea id="personalResponseInputForm" placeholder="Type response here..." class="personalResponseInputForm"></textarea>
+            </div>
+            <div id="nextButton" onclick="handlePersonalResponseSubmit()">Submit Response</div>
+            </div>
+            <div id="quizCompleteMsgContainer">
+                <div class="quizLabel">Nice work!</div>
+                <a href="./middle.html"><div class="nextModuleButton">Next Module</div></a>
+            </div>
+            </div>
+        </div>
+    </body>
+
+</html>

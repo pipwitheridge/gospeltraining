@@ -234,6 +234,54 @@ iframe, .iFrame, .iFrameContainer {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.personalResponseInputForm, .personalResponseInputDiv {
+  width: 100%;
+  font-size: 60px;
+  margin-Top: 80px;
+  border-Radius: 5px;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.personalResponseInputForm {
+  height: 5em;
+}
+
+.paragraphContainer {
+  font-family: 'Lucida Sans Regular', sans-serif;
+  font-size: 50px;
+  padding-inline: 50px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.paddedTextBox {
+  background-color: antiquewhite;
+  padding: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 40px;
+  border-radius: 10px;
+}
+
+#copyTextButton {
+  background-color: rgb(0, 84, 112);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px;
+  text-align: right;
+}
+
+.copyButtonDiv {
+  display: flex;
+  justify-content: right;
+}
+
+.boldHeaderMediumSize {
+  font-weight: bold;
+}
+
 }
 
 
