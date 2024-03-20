@@ -3,107 +3,20 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Evangelism Training</title>
-    <link rel="stylesheet" href="./../styles.css">
+    <link rel="stylesheet" href="../stylesBigScreen.css"/>
+    <link rel="stylesheet" href="../stylesSmallScreen.css"/>
     <link rel="favicon" href="favicon.ico" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
     <script src="./../quizQuestions.js"></script>
+    <script src="./../quizFunctions.js"></script>
 
 <script>
-    
-    
+
 const quizData = quizQuestions.filter((thing) => thing.moduleName === "God our enemy");
-var currentQuestion = 0
-var checkedOptions = []
-
-const handleProgressClick = () => {
-    const allCorrect = checkedOptions.every((thing) => quizData[currentQuestion].answer.includes(thing));
-    const checkingAnswer = document.getElementById("nextButton").innerHTML === "Check Answer"
-    const tryingAgain = document.getElementById("nextButton").innerHTML === "Try Again" 
-    const nextQuestion = document.getElementById("nextButton").innerHTML === "Next Question" 
-    const finishingQuiz = document.getElementById("nextButton").innerHTML === "Finish Quiz" 
-    const correctAnswerLength = checkedOptions.length === quizData[currentQuestion].answer.length;
-    const finalQuestion = currentQuestion === quizData.length-1;
-    if(!allCorrect && checkingAnswer || !correctAnswerLength) {
-        document.getElementById("nextButton").innerHTML = "Try Again";
-        checkedOptions.forEach((thing) => {
-            if(quizData[currentQuestion].answer.includes(thing)) {
-                document.getElementById(thing).style.backgroundColor = "gold";
-            }
-            else {
-                document.getElementById(thing).style.backgroundColor = "rgb(255, 102, 102)";
-            }
-        })
-    }
-    if(tryingAgain) {
-        document.getElementById("nextButton").innerHTML = "Check Answer";
-        checkedOptions.forEach((thing) => {
-            document.getElementById(thing).style.backgroundColor = "rgb(241, 241, 241)";
-        });
-        refreshQuestions();
-    }
-    if(correctAnswerLength && allCorrect && checkingAnswer) {
-        document.getElementById("correctMessage").style.display = "";
-        checkedOptions.forEach((thing) => {
-            document.getElementById(thing).style.backgroundColor = "rgb(0, 255, 153)";
-        })
-        if(finalQuestion) {
-            document.getElementById("nextButton").innerHTML = "Finish Quiz";
-        }
-        else {
-            document.getElementById("nextButton").innerHTML = "Next Question";
-        }
-    }
-    if(nextQuestion) {
-        currentQuestion++;
-        document.getElementById("correctMessage").style.display = "none";
-        refreshQuestions()
-        document.getElementById("nextButton").innerHTML = "Check Answer";
-    }
-    if(finishingQuiz) {
-        checkedOptions = [];
-        document.getElementById("unfinishedQuiz").style.display = "none";
-        document.getElementById("quizCompleteMsgContainer").style.display = "";
-    }
-}
-
-const refreshQuestions = function() {
-    checkedOptions = [];
-    document.getElementById("options").innerHTML = "";
-    document.getElementById("questionNo").innerHTML = quizData[currentQuestion].questionNo;
-    document.getElementById("question").innerHTML = quizData[currentQuestion].question;
-    document.getElementById("correctMessage").innerHTML = quizData[currentQuestion].correctMessage;
-    quizData[currentQuestion].options.forEach((thing) => {
-        var newOption = document.createElement('div');
-        newOption.innerHTML = thing;
-        newOption.setAttribute("id", thing);
-        newOption.setAttribute("class", "optionButton");
-        newOption.onclick = () => {
-            if(checkedOptions.includes(thing)) {
-                checkedOptions = checkedOptions.filter(item => item !== thing);
-                newOption.removeAttribute("class", "optionButtonSelected");
-                newOption.setAttribute("class", "optionButton");
-            }
-            else {
-                checkedOptions.push(thing);
-                newOption.removeAttribute("class", "optionButton");
-                newOption.setAttribute("class", "optionButtonSelected");
-            }
-        }
-        document.getElementById("options").appendChild(newOption)
-    })
-}            
-
-window.onload = function() {
-    refreshQuestions()
-    document.getElementById("totalQuestions").innerHTML = quizData.length;
-    document.getElementById("nextButton").innerHTML = "Check Answer";
-    document.getElementById("correctMessage").style.display = "none";
-    document.getElementById("quizCompleteMsgContainer").style.display = "none";
-    }            
+window.onload = function() {handleWindowLoad(quizData)}            
 
 </script>
 
@@ -111,27 +24,36 @@ window.onload = function() {
 
 <body>
     <div class="mainContainer">
-        <a href="/"><div class="navHeader"><i class="fa-regular fa-comments" style="margin-right: 20px;"></i>Evangelism Training</div></a>
-        <div class="moduleHeader">
-        <div>The Gospel</div>
-        <div class="lessonProgressLine">Part 2 of 4</div>
+        <div class="navHeaderSimple">
+            <div>
+            <a href="./../index.html"><i class="fa-solid fa-house"></i></a>
+            </div>
+            <div class="moduleHeader">
+                <div>
+                    <div class="moduleTitle">The Gospel</div>
+                    <div class="lessonProgressLine">Part 2 of 4</div>
+                </div>
+            </div>
         </div>
         <div class="lessonHeader">God our enemy</div>
         <div class="iFrameContainer">
             <iframe frameborder="0" allowfullscreen
-            src="https://www.youtube.com/embed/IXp0Wp-zXNk?autoplay=1&mute=1">
+            src="https://www.youtube.com/embed/DXVo6bIBOjc?autoplay=0&controls=0">
             </iframe>
         </div>
         <div id="quizContainer">
             <div id="unfinishedQuiz">
-            <div class="quizLabel">Quiz</div>
-            <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+            <div class="quizTopLine">
+                <div class="quizLabel">Quiz</div>
+                <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+            </div>
             <div id="question"></div>
+            <div id="questionNote"></div>
             <div style="flex-direction: column;">
             <div id="options"></div>
             </div>
             <div id="correctMessage"></div>
-            <div id="nextButton" onclick="handleProgressClick()"></div>
+            <div id="nextButton" onclick="handleProgressClick(quizData)"></div>
             </div>
             <div id="quizCompleteMsgContainer">
                 <div class="quizLabel">Nice work!</div>

@@ -1,5 +1,23 @@
 var quizQuestions = [
     {
+        "moduleName": "Introduction",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "True or false: there are only two ways to communicate the gospel.",
+        "options": ["True", "False"],
+        "answer": ["False"],
+        "correctMessage": "Yes, correct. While the gospel is a message with core points, there are many ways to communicate it."
+    },
+    {
+        "moduleName": "Introduction",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "What was the suggested 'simplest' way of articulating the gospel?",
+        "options": ["Jesus died", "Jesus is lord", "God is our maker", "Be happy"],
+        "answer": ["Jesus is lord"],
+        "correctMessage": "Yes. Some suggest that this is the simplest version of the core gospel message."
+    },
+    {
         "moduleName": "God our maker",
         "questionNo": 1,
         "questionType": "multiple choice",
@@ -137,4 +155,130 @@ var quizQuestions = [
         "question": "Write a couple of sentences on how becoming a Christian changed your life afterwards. What changed in the way you think and act? What changed about what you value in life?",
         "localStorageName": "yourStoryEnd"
     },
+    {
+        "moduleName": "Their story bible",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "What does the Apostle John say about those without faith in Jesus?",
+        "options": ["They won't see life", "They will be saved", "Don't worry about them", "God's wrath remains on them"],
+        "answer": ["They won't see life", "God's wrath remains on them"],
+        "correctMessage": "Yes, these are sobering descriptions."
+    },
+    {
+        "moduleName": "Their story bible",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "According to the Apostle Peter, why hasn’t Jesus returned yet?",
+        "options": ["God is patient", "God is building anticipation", "God wants all to come to repentance", "Jesus has already returned secretly"],
+        "answer": ["God is patient", "God wants all to come to repentance"],
+        "correctMessage": "Yes, that's correct."
+    },
+    {
+        "moduleName": "Their story bible",
+        "questionNo": 3,
+        "questionType": "multiple choice",
+        "question": "According to Paul’s letter to Timothy, what does God desire for all people?",
+        "options": ["That they get what they deserve", "That they are saved", "That they know the truth"],
+        "answer": ["That they get what they deserve", "That they know the truth"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Their story they say",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "According to the 2023 study cited, what is the age group in Australia most likely to report feelings of loneliness?",
+        "options": ["18-24", "35-49", "55-64"],
+        "answer": ["18-24"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Their story they say",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "According to the 2023 study cited, approximately what fraction of Australians struggle with substance addiction (alcohol or illicit drugs)?",
+        "options": ["1 in 10", "1 in 20", "1 in 100"],
+        "answer": ["1 in 20"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Their story they say",
+        "questionNo": 3,
+        "questionType": "multiple choice",
+        "question": "True or false: the gospel has nothing to offer people struggling with loneliness and/or addiction.",
+        "options": ["True", "False"],
+        "answer": ["True"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Towards evangelism praying",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "What's a recommended first step towards praying for your non-Christian contacts?",
+        "options": ["List the non-Christian people you encounter regularly", "Text them all asking for prayer points"],
+        "answer": ["List the non-Christian people you encounter regularly"],
+        "correctMessage": "Yes, this is a good step. This is a good activity to try."
+    },
+    {
+        "moduleName": "Towards evangelism praying",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "Which line of the Lord’s Prayer was cited as having a ‘missional’ tone?",
+        "options": ["Give us this day our daily bread", "Hallowed be your name", "Lead us not into temptation"],
+        "answer": ["Hallowed be your name"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Towards evangelism living",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "According to the bit of the Sermon on the Mount cited, what might cause non-believers to glorify God?",
+        "options": ["Miracles", "Compelling music", "Your good deeds"],
+        "answer": ["Your good deeds"],
+        "correctMessage": "Yes, correct."
+    }, 
+    {
+        "moduleName": "Towards evangelism living",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "According to the Apostle Peter, what flows from revering Christ as Lord?",
+        "options": ["Being prepared to debate non-Christians", "Being prepared to give an answer for your hope", "Gentleness and Respect"],
+        "answer": ["Being prepared to give an answer for your hope", "Gentleness and Respect"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Towards evangelism living",
+        "questionNo": 3,
+        "questionType": "multiple choice",
+        "question": "What image does Paul use to explain what our speech should be like toward outsiders?",
+        "options": ["Firm like a log", "Seasoned with salt", "Sharp as an arrow", "Gentle like the breeze"],
+        "answer": ["Seasoned with salt"],
+        "correctMessage": "Yes, correct."
+    },
+    {
+        "moduleName": "Towards evangelism together",
+        "questionNo": 1,
+        "questionType": "multiple choice",
+        "question": "What analogy is used to describe the church, which might demonstrate that we need to work as a team in our evangelism?",
+        "options": ["Church as a tree", "Church as a plane", "Church as a body"],
+        "answer": ["Church as a body"],
+        "correctMessage": "Yes, this analogy might suggest that teamwork is necessary."
+    },
+    {
+        "moduleName": "Towards evangelism together",
+        "questionNo": 2,
+        "questionType": "multiple choice",
+        "question": "What is a recommended step if your church hosts its own evangelistic course?",
+        "options": ["Familiarise yourself with it", "Make flyers for it", "Start a different course"],
+        "answer": ["Familiarise yourself with it"],
+        "correctMessage": "Yes, it's good for you to know as much as you can about it, to give you confidence to invite others."
+    },
+    {
+        "moduleName": "Towards evangelism together",
+        "questionNo": 3,
+        "questionType": "multiple choice",
+        "question": "What is a recommended step if your church doesn’t host its own evangelistic course?",
+        "options": ["Pray for one", "Discuss the possibility of one with church staff", "Start one yourself without telling anyone"],
+        "answer": ["Discuss the possibility of one with church staff"],
+        "correctMessage": "Yes, it's good to get an idea of how feasible it is with your church staff. Although prayer is also a good step."
+    }
 ] 
