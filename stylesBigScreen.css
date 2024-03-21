@@ -138,10 +138,11 @@
   }
 
   .quizLabel {
-    font-size: 40px;
+    font-size: 24px;
     margin-inline: 0px;
     font-family: 'Lucida Sans Regular', sans-serif;
     font-weight: lighter;
+    margin-top: 20px;
   }
 
   #options {
@@ -224,6 +225,61 @@
 #correctMessage {
   margin-top: 40px;
 }
+
+.personalResponseInputForm {
+  width: 90%;
+  padding: 10px;
+}
+
+.personalResponseInputDiv {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.paragraphContainer {
+  font-family: 'Lucida Sans Regular', sans-serif;
+  font-size: 20px;
+  padding-inline: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.paddedTextBox {
+  background-color: antiquewhite;
+  padding: 30px;
+  margin-top: 50px;
+  margin-top: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#copyTextButton {
+  background-color: rgb(63, 114, 255);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#copyTextButton:hover {
+  background-color: rgb(95, 138, 255);
+  color: black;
+  cursor: pointer;
+}
+
+.copyButtonDiv {
+  display: flex;
+  justify-content: right;
+}
+
+.boldHeaderMediumSize {
+  font-weight: bold;
+}
+
+
 
 }
 
