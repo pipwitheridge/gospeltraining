@@ -279,7 +279,31 @@
   font-weight: bold;
 }
 
+.scaleBody {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
 
+.scaleLabels {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scaleNumber {
+  height: auto;
+  width: 10%;
+  background-color: aliceblue;
+  color: black;
+  border: 1px solid grey;
+  text-align: center;
+  line-height: 40px;
+}
+
+.scaleNumber:hover {
+  cursor: pointer;
+}
 
 }
 

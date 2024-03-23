@@ -179,7 +179,7 @@ var quizQuestions = [
         "questionType": "multiple choice",
         "question": "According to Paul’s letter to Timothy, what does God desire for all people?",
         "options": ["That they get what they deserve", "That they are saved", "That they know the truth"],
-        "answer": ["That they get what they deserve", "That they know the truth"],
+        "answer": ["That they are saved", "That they know the truth"],
         "correctMessage": "Yes, correct."
     },
     {
@@ -206,7 +206,7 @@ var quizQuestions = [
         "questionType": "multiple choice",
         "question": "True or false: the gospel has nothing to offer people struggling with loneliness and/or addiction.",
         "options": ["True", "False"],
-        "answer": ["True"],
+        "answer": ["False"],
         "correctMessage": "Yes, correct."
     },
     {
@@ -280,5 +280,53 @@ var quizQuestions = [
         "options": ["Pray for one", "Discuss the possibility of one with church staff", "Start one yourself without telling anyone"],
         "answer": ["Discuss the possibility of one with church staff"],
         "correctMessage": "Yes, it's good to get an idea of how feasible it is with your church staff. Although prayer is also a good step."
-    }
+    },
+    {
+        "moduleName": "Towards evangelism reflection",
+        "questionNo": 1,
+        "questionType": "scale",
+        "scaleTop": 10,
+        "question": "On the following scale, how would you rate your desire for your non-Christian contacts to know Jesus?",
+        "responseMessages": [
+            {
+                "moreThan": 0,
+                "lessThan": 4,
+                "message": "It's good to be self-aware that there is room to grow here. Possible steps forward could include prayer, talking to a friend, and so on."
+            },
+            {
+                "moreThan": 3,
+                "lessThan": 7,
+                "message": "A neutral position like this means that there could be room to grow. Fan into flame the zeal you have through prayer and other means."
+            },
+            {
+                "moreThan": 6,
+                "lessThan": 11,
+                "message": "Praise God that He has given you a strong desire for people to know Jesus."
+            }
+        ]
+    },
+    {
+        "moduleName": "Towards evangelism reflection",
+        "questionNo": 2,
+        "questionType": "scale",
+        "scaleTop": 10,
+        "question": "On the following scale, how would you rate your discipline in praying for your non-Christian contacts to know Jesus?",
+        "responseMessages": [
+            {
+                "moreThan": 0,
+                "lessThan": 4,
+                "message": "It's good to be self-aware that there is room to grow here. Possible steps forward could include writing a list, setting a time and place, and so on."
+            },
+            {
+                "moreThan": 3,
+                "lessThan": 7,
+                "message": "A neutral position like this means that there could be room to grow. Fan into flame the zeal you have by asking others how they stay disciplined in this area."
+            },
+            {
+                "moreThan": 6,
+                "lessThan": 11,
+                "message": "Praise God that He has given you a strong discipline in prayer for this end."
+            }
+        ]
+    },
 ] 

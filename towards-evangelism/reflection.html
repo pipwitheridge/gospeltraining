@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Evangelism Training</title>
+    <link rel="stylesheet" href="../stylesBigScreen.css"/>
+    <link rel="stylesheet" href="../stylesSmallScreen.css"/>
+    <link rel="favicon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Belanosima:wght@400;600;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/fedaa0c557.js' crossorigin='anonymous'></script>
+    <script src="./../quizQuestions.js"></script>
+    <script src="./../quizFunctions.js"></script>
+
+<script>
+
+const quizData = quizQuestions.filter((thing) => thing.moduleName === "Towards evangelism reflection");
+var currentQuestion = 0;
+
+const handleScaleSubmit = function() {
+    document.getElementById("quizCompleteMsgContainer").style.display = "";
+}
+
+    
+
+window.onload = function() {
+        document.getElementById("quizCompleteMsgContainer").style.display = "none";
+        document.getElementById("nextButton").innerHTML = "Submit Response"
+        document.getElementById("question").innerHTML = quizData[currentQuestion].question;
+        document.getElementById("questionNo").innerHTML = quizData[currentQuestion].questionNo;
+        document.getElementById("totalQuestions").innerHTML = quizData.length;
+        var scaleNumberDivs = document.getElementsByClassName('scaleNumber');
+            for(var i = 0; i < scaleNumberDivs.length; i++) {
+                scaleNumberDivs[i].addEventListener("mouseover", function() {
+                    for(var a = 0; a < scaleNumberDivs.length; a++) {
+                        if(scaleNumberDivs[a].value < scaleNumberDivs[i].value) {
+                            scaleNumberDivs[a].style.backgroundColor = blue;
+                        }
+                    }
+                })
+            }
+}                    
+
+</script>
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navHeaderSimple">
+            <div>
+            <a href="./../index.html"><i class="fa-solid fa-house"></i></a>
+            </div>
+            <div class="moduleHeader">
+                <div>
+                    <div class="moduleTitle">Towards Evangelism</div>
+                    <div class="lessonProgressLine">Bonus</div>
+                </div>
+            </div>
+        </div>
+        <div class="lessonHeader">Reflection</div>
+        <div id="quizContainer">
+            <div id="unfinishedQuiz">
+            <div class="quizTopLine">
+                <div class="quizLabel">Helpful Questions</div>
+                <div id="questionNoLine">Question <span id="questionNo"></span> of <span id="totalQuestions"></span></div>
+            </div>
+            <div id="question"></div>
+            <div id="scaleContainer">    
+                <div class="scaleBody">
+                    <div class="scaleNumber">1</div>
+                    <div class="scaleNumber">2</div>
+                    <div class="scaleNumber">3</div>
+                    <div class="scaleNumber">4</div>
+                    <div class="scaleNumber">5</div>
+                    <div class="scaleNumber">6</div>
+                    <div class="scaleNumber">7</div>
+                    <div class="scaleNumber">8</div>
+                    <div class="scaleNumber">9</div>
+                    <div class="scaleNumber">10</div>
+                </div>      
+                <div class="scaleLabels">
+                    <div class="scaleLabel">None</div>
+                    <div class="scaleLabel">Fully</div>
+                </div> 
+            </div>
+            <div id="nextButton"></div>
+            </div>
+            <div id="quizCompleteMsgContainer">
+                <div class="quizLabel">Nice work!</div>
+                <a href="./living.html"><div class="nextModuleButton">Next Module</div></a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
